@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { ROUTES } from './routes/router';
+import { ROUTES } from './routes/router.jsx';
 import './App.css';
 
 // --- DATOS MOCKUP ---
@@ -63,7 +63,7 @@ function Header() {
             <div className="dropdown-content">
               <Link to="/cpf">CPF</Link>
               <Link to="/residencia">Residencia / Refugio</Link>
-              <Link to="/documento-migratorio">Documento Migratorio (RNM)</Link>
+              <Link to="/documento-migratorio">Documento Migratorio (RNM.)</Link>
               <Link to="/carteira">Carteira de Trabalho</Link>
               <Link to="/naturalizacion">Naturalización</Link>
               <Link to="/pasaporte">Pasaporte Venezolano</Link>
