@@ -4,7 +4,7 @@ import Residencia from '../pages/Residencia';
 import DocumentoMigratorio from '../pages/DocumentoMigratorio';
 
 import Naturalizacion from '../pages/Naturalizacion';
-import Pasaporte from '../pages/pasaporte';
+import Pasaporte from '../pages/Pasaporte';
 import Carteira from '../pages/Carteira';
 import Revalida from '../pages/Revalida';
 import Bachillerato from '../pages/Bachillerato';
