@@ -1,10 +1,10 @@
 ﻿import React from 'react';
-import Cpf from '../pages/Cpf';
+import Cpf from '../pages/cpf';
 import Residencia from '../pages/Residencia';
 import DocumentoMigratorio from '../pages/DocumentoMigratorio';
 
 import Naturalizacion from '../pages/Naturalizacion';
-import Pasaporte from '../pages/Pasaporte';
+import Pasaporte from '../pages/pasaporte';
 import Carteira from '../pages/carteira';
 import Revalida from '../pages/Revalida';
 import Bachillerato from '../pages/Bachillerato';
