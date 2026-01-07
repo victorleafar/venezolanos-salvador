@@ -1,15 +1,15 @@
 ﻿import React from 'react';
-import Cpf from '../pages/cpf';
+import Cpf from '../pages/Cpf';
 import Residencia from '../pages/Residencia';
 import DocumentoMigratorio from '../pages/DocumentoMigratorio';
 
 import Naturalizacion from '../pages/Naturalizacion';
 import Pasaporte from '../pages/pasaporte';
-import Carteira from '../pages/carteira';
+import Carteira from '../pages/Carteira';
 import Revalida from '../pages/Revalida';
 import Bachillerato from '../pages/Bachillerato';
-import CelpeBras from '../pages/CelpeBras';
-import Encceja from '../pages/encceja';
+import CelpeBras from '../pages/Celpebras';
+import Encceja from '../pages/Encceja';
 import Enem from '../pages/Enem';
 import Empleo from '../pages/Empleo';
 import Salud from '../pages/Salud';
@@ -18,8 +18,8 @@ import Escuelas from '../pages/Escuelas';
 import Eventos from '../pages/Eventos';
 import Deportes from '../pages/Deportes';
 import Emprendedores from '../pages/Emprendedores';
-import Portugues from '../pages/portugues';
-import Traduccion from '../pages/traduccion';
+import Portugues from '../pages/Portugues';
+import Traduccion from '../pages/Traduccion';
 
 export const ROUTES = [
   { path: '/cpf', id: 'cpf', title: 'CPF', text: 'Información sobre cómo sacar el CPF en Brasil.', component: Cpf },

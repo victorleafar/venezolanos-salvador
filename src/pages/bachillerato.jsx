@@ -57,7 +57,7 @@ export default function Bachillerato() {
         {/* Nota adicional */}
         <div style={{ marginTop: 20, textAlign: 'center' }}>
           <p>
-            Es importante planificar con antelación y asegurarse de tener todos los documentos requeridos correctamente apostillados.
+            Es importante planificar con antelación y asegurarse de tener todos los documentos requeridos correctamente apostillados
           </p>
         </div>
       </div>
