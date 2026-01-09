@@ -1,24 +1,24 @@
 ﻿import React from 'react';
-import Cpf from '../pages/cpf.jsx';
-import Residencia from '../pages/residencia.jsx';
-import DocumentoMigratorio from '../pages/documentomigratorio.jsx';
-import Naturalizacion from '../pages/naturalizacion.jsx';
-import Pasaporte from '../pages/pasaporte.jsx';
+import Cpf from '../pages/Cpf.jsx';
+import Residencia from '../pages/Residencia.jsx';
+import DocumentoMigratorio from '../pages/DocumentoMigratorio.jsx';
+import Naturalizacion from '../pages/Naturalizacion.jsx';
+import Pasaporte from '../pages/Pasaporte.jsx';
 import Carteira from '../pages/carteira.jsx';
-import Revalida from '../pages/revalida.jsx';
-import Bachillerato from '../pages/bachillerato.jsx';
-import CelpeBras from '../pages/celpebras.jsx';
-import Encceja from '../pages/encceja.jsx';
-import Enem from '../pages/enem.jsx';
+import Revalida from '../pages/Revalida.jsx';
+import Bachillerato from '../pages/Bachillerato.jsx';
+import CelpeBras from '../pages/CelpeBras.jsx';
+import Encceja from '../pages/Encceja.jsx';
+import Enem from '../pages/Enem.jsx';
 import Empleo from '../pages/empleo.jsx';
 import Salud from '../pages/salud.jsx';
 import Vivienda from '../pages/vivienda.jsx';
 import Escuelas from '../pages/escuelas.jsx';
 import Eventos from '../pages/eventos.jsx';
 import Deportes from '../pages/deportes.jsx';
-import Emprendedores from '../pages/emprendedores.jsx';
-import Portugues from '../pages/portugues.jsx';
-import Traduccion from '../pages/traduccion.jsx';
+import Emprendedores from '../pages/Emprendedores.jsx';
+import Portugues from '../pages/Portugues.jsx';
+import Traduccion from '../pages/Traduccion.jsx';
 
 export const ROUTES = [
   { path: '/cpf', id: 'cpf', title: 'CPF', text: 'Información sobre cómo sacar el CPF en Brasil.', component: Cpf },
