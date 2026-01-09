@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { ROUTES } from './routes/router';
+import { ROUTES } from "./routes/Router"; // Cambiar de router a Router
 import './App.css';
 
 // --- DATOS MOCKUP ---
