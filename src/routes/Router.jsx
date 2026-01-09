@@ -29,7 +29,7 @@ export const ROUTES = [
   { path: '/carteira', id: 'carteira', title: 'Carteira de Trabalho', text: 'Cómo obtener la Carteira de Trabalho en Brasil.', component: Carteira },
   { path: '/revalida', id: 'revalida', title: 'Revalida de Título', text: 'Cómo revalidar tu título universitario en Brasil.', component: Revalida },
   { path: '/bachillerato', id: 'bachillerato', title: 'Validar Bachillerato', text: 'Información para validar estudios de secundaria.', component: Bachillerato },
-  { path: '/celpebras', id: 'celpe-bras', title: 'Celpe-Bras', text: 'Preparación y registro para el examen de portugués.', component: CelpeBras },
+  { path: '/celpe-bras', id: 'celpe-bras', title: 'Celpe-Bras', text: 'Preparación y registro para el examen de portugués.', component: CelpeBras },
   { path: '/portugues', id: 'portugues', title: 'Curso de Portugués', text: 'Recursos y cursos para aprender portugués.', component: Portugues },
   { path: '/encceja', id: 'encceja', title: 'ENCCEJA', text: 'Guía para el examen de ENCCEJA.', component: Encceja },
   { path: '/enem', id: 'enem', title: 'ENEM / Universidad', text: 'Cómo usar ENEM para entrar a la universidad.', component: Enem },
