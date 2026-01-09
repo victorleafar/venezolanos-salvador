@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { ROUTES } from "./routes/Router.jsx"; // Cambiar de router a Router
 import './App.css';
+import pixQR from './pages/pix-qr.png'; // Importar la imagen correctamente
 
 // --- DATOS MOCKUP ---
 const INFO_CARDS = [
@@ -572,8 +573,7 @@ const ContactForm = () => {
 
 function Footer() {
   const [pixOpen, setPixOpen] = useState(false);
-  const pixKey = 'tu-clave-pix@ejemplo.com'; // <- cambia por tu clave PIX (email, CPF o teléfono)
-  const pixQrSrc = '/pix-qr.png'; // coloca la imagen QR en public/pix-qr.png
+  const pixKey = '9755b476-1045-40ea-a3ff-e4dc65215236';
 
   const copyPix = async () => {
     try {
@@ -701,46 +701,109 @@ function Footer() {
           style={{
             position: 'fixed',
             inset: 0,
-            background: 'rgba(0,0,0,0.5)',
+            background: 'rgba(0,0,0,0.6)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            zIndex: 2000
+            zIndex: 2000,
+            padding: '1rem'
           }}
           onClick={() => setPixOpen(false)}
         >
           <div
             style={{
-              width: 320,
-              maxWidth: '90%',
-              background: 'var(--bg-white)',
-              borderRadius: 12,
-              padding: 18,
-              boxShadow: '0 12px 40px rgba(0,0,0,0.25)'
+              width: '100%',
+              maxWidth: 400,
+              background: 'white',
+              borderRadius: 16,
+              padding: 24,
+              boxShadow: '0 12px 40px rgba(0,0,0,0.3)'
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            <h3 style={{ marginBottom: 8 }}>Contribuir con PIX</h3>
-            <p style={{ marginTop: 0, color: 'var(--text-light)', fontSize: 14 }}>Escanea el QR o copia la clave.</p>
+            <h3 style={{ margin: '0 0 8px 0', color: 'var(--ven-blue)', textAlign: 'center' }}>
+              Contribuir con PIX
+            </h3>
+            <p style={{ margin: '0 0 16px 0', color: 'var(--text-light)', fontSize: 14, textAlign: 'center' }}>
+              Escanea el QR o copia la clave PIX
+            </p>
 
-            <div style={{ textAlign: 'center', margin: '12px 0' }}>
-              <img src={pixQrSrc} alt="PIX QR" style={{ width: 200, height: 200, objectFit: 'contain' }} />
+            <div style={{ 
+              textAlign: 'center', 
+              margin: '16px 0',
+              background: '#f8f9fa',
+              padding: 16,
+              borderRadius: 12
+            }}>
+              <img 
+                src={pixQR} 
+                alt="PIX QR Code" 
+                style={{ 
+                  width: '100%',
+                  maxWidth: 250, 
+                  height: 'auto',
+                  border: '4px solid var(--ven-blue)',
+                  borderRadius: 8
+                }} 
+              />
             </div>
 
-            <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-              {/* allow input to shrink on small widths with minWidth:0 */}
-              <input readOnly value={pixKey} style={{ flex: 1, minWidth: 0, padding: 8, borderRadius: 8, border: '1px solid #eee' }} />
-              {/* prevent button from growing and reduce padding so it fits */}
+            <p style={{ 
+              fontSize: 12, 
+              color: 'var(--text-dark)', 
+              marginBottom: 8, 
+              fontWeight: 'bold',
+              textAlign: 'center'
+            }}>
+              Chave PIX:
+            </p>
+
+            <div style={{ 
+              display: 'flex', 
+              gap: 8, 
+              alignItems: 'stretch',
+              marginBottom: 16
+            }}>
+              <input 
+                readOnly 
+                value={pixKey} 
+                style={{ 
+                  flex: 1, 
+                  minWidth: 0, 
+                  padding: '10px 12px', 
+                  borderRadius: 8, 
+                  border: '1px solid #ddd',
+                  fontFamily: 'monospace',
+                  fontSize: 11,
+                  background: '#f8f9fa'
+                }} 
+              />
               <button
                 className="btn btn-primary"
                 onClick={copyPix}
-                style={{ flex: '0 0 auto', padding: '8px 10px', whiteSpace: 'nowrap' }}
+                style={{ 
+                  flex: '0 0 auto', 
+                  padding: '10px 16px', 
+                  whiteSpace: 'nowrap',
+                  fontSize: 14
+                }}
               >
-                Copiar
+                📋 Copiar
               </button>
             </div>
 
-            <button onClick={() => setPixOpen(false)} className="btn" style={{ marginTop: 12, width: '100%' }}>Cerrar</button>
+            <button 
+              onClick={() => setPixOpen(false)} 
+              className="btn" 
+              style={{ 
+                width: '100%',
+                background: '#e9ecef',
+                color: 'var(--text-dark)',
+                border: 'none'
+              }}
+            >
+              Cerrar
+            </button>
           </div>
         </div>
       )}
