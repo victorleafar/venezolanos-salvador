@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { ROUTES } from './routes/Router'; // Cambiar de './routes/router' a './routes/Router'
+import { ROUTES } from './routes/router';
 import './App.css';
 
 // --- DATOS MOCKUP ---
@@ -15,6 +15,27 @@ const TESTIMONIOS = [
   { id: 1, name: 'Andrea González', origin: 'Caracas ➡️ Salvador', text: 'Al principio tenía miedo por el idioma, pero la gente de Bahía es tan cálida como nosotros. Esta página me ayudó a entender los trámites.' },
   { id: 2, name: 'José "El Chamo" Pérez', origin: 'Maracaibo ➡️ Salvador', text: 'Conseguí trabajo gracias a los tips de currículum. ¡Salvador tiene una energía brutal, me siento en casa!' },
   { id: 3, name: 'Valentina Méndez', origin: 'Barquisimeto ➡️ Salvador', text: 'La guía del SUS es fundamental. Pude vacunar a mis chamos sin problemas. Gracias por unir a la comunidad.' },
+];
+
+const EVENTOS_DESTACADOS = [
+  {
+    id: 1,
+    titulo: 'Próximamente',
+    fecha: 'Por definir',
+    lugar: 'Salvador, BA',
+    imagen: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop',
+    descripcion: 'Estamos organizando eventos para la comunidad.',
+    tipo: 'Próximo'
+  },
+  {
+    id: 2,
+    titulo: 'Eventos Comunitarios',
+    fecha: 'Pronto',
+    lugar: 'Por confirmar',
+    imagen: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&auto=format&fit=crop',
+    descripcion: 'Mantente atento a nuestras redes sociales.',
+    tipo: 'En breve'
+  }
 ];
 
 const IMAGENES_CARRUSEL = [
@@ -221,6 +242,176 @@ const GallerySection = () => {
           ))}
         </div>
 
+      </div>
+    </section>
+  );
+};
+
+const EventosCarousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const scrollLeft = () => {
+    setCurrentIndex(prev => (prev === 0 ? EVENTOS_DESTACADOS.length - 1 : prev - 1));
+  };
+
+  const scrollRight = () => {
+    setCurrentIndex(prev => (prev === EVENTOS_DESTACADOS.length - 1 ? 0 : prev + 1));
+  };
+
+  useEffect(() => {
+    const timer = setInterval(scrollRight, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <section className="section bg-gradient-accent">
+      <div className="container">
+        <div className="title-wrapper">
+          <h2 className="section-title" style={{ color: 'white' }}>Próximos Eventos</h2>
+          <div className="title-underline" style={{ background: 'var(--ven-yellow)' }}></div>
+          <p className="section-subtitle" style={{ color: 'rgba(255,255,255,0.9)' }}>
+            Mantente atento a las actividades de nuestra comunidad
+          </p>
+        </div>
+
+        <div style={{ position: 'relative', maxWidth: 900, margin: '0 auto' }}>
+          <button
+            onClick={scrollLeft}
+            aria-label="Evento anterior"
+            style={{
+              position: 'absolute',
+              left: -50,
+              top: '50%',
+              transform: 'translateY(-50%)',
+              background: 'rgba(255,255,255,0.9)',
+              border: 'none',
+              borderRadius: '50%',
+              width: 40,
+              height: 40,
+              cursor: 'pointer',
+              zIndex: 10,
+              fontSize: 20,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+            }}
+          >
+            ‹
+          </button>
+
+          <div style={{ overflow: 'hidden', borderRadius: 16, boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
+            <div
+              style={{
+                display: 'flex',
+                transition: 'transform 0.5s ease',
+                transform: `translateX(-${currentIndex * 100}%)`
+              }}
+            >
+              {EVENTOS_DESTACADOS.map((evento) => (
+                <div
+                  key={evento.id}
+                  style={{
+                    minWidth: '100%',
+                    position: 'relative',
+                    height: 400,
+                    backgroundImage: `url(${evento.imagen})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}
+                >
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'flex-end',
+                      padding: 32
+                    }}
+                  >
+                    <span
+                      style={{
+                        display: 'inline-block',
+                        background: 'var(--ven-yellow)',
+                        color: 'var(--ven-blue)',
+                        padding: '4px 12px',
+                        borderRadius: 20,
+                        fontSize: 12,
+                        fontWeight: 'bold',
+                        marginBottom: 8,
+                        width: 'fit-content'
+                      }}
+                    >
+                      {evento.tipo}
+                    </span>
+                    <h3 style={{ color: 'white', margin: '8px 0', fontSize: 28 }}>
+                      {evento.titulo}
+                    </h3>
+                    <p style={{ color: 'rgba(255,255,255,0.9)', margin: '4px 0' }}>
+                      {evento.descripcion}
+                    </p>
+                    <div style={{ display: 'flex', gap: 20, marginTop: 12, fontSize: 14 }}>
+                      <span style={{ color: 'var(--ven-yellow)' }}>📅 {evento.fecha}</span>
+                      <span style={{ color: 'var(--ven-yellow)' }}>📍 {evento.lugar}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <button
+            onClick={scrollRight}
+            aria-label="Siguiente evento"
+            style={{
+              position: 'absolute',
+              right: -50,
+              top: '50%',
+              transform: 'translateY(-50%)',
+              background: 'rgba(255,255,255,0.9)',
+              border: 'none',
+              borderRadius: '50%',
+              width: 40,
+              height: 40,
+              cursor: 'pointer',
+              zIndex: 10,
+              fontSize: 20,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+            }}
+          >
+            ›
+          </button>
+
+          <div style={{ display: 'flex', justifyContent: 'center', gap: 8, marginTop: 20 }}>
+            {EVENTOS_DESTACADOS.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                style={{
+                  width: currentIndex === idx ? 24 : 8,
+                  height: 8,
+                  borderRadius: 4,
+                  border: 'none',
+                  background: currentIndex === idx ? 'var(--ven-yellow)' : 'rgba(255,255,255,0.4)',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease'
+                }}
+                aria-label={`Ir al evento ${idx + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div style={{ textAlign: 'center', marginTop: 32 }}>
+          <Link to="/eventos" className="btn btn-primary" style={{ background: 'white', color: 'var(--ven-blue)' }}>
+            Ver Más Información
+          </Link>
+        </div>
       </div>
     </section>
   );
@@ -563,9 +754,9 @@ const HomePage = () => (
     <Hero />
     <InfoSection />
     <GallerySection />
+    <EventosCarousel /> {/* Nueva sección de eventos */}
     <Testimonials />
     <ContactForm />
-    {/* Não renderizar PlaceholderSections aqui para evitar duplicação com as rotas */}
   </>
 );
 
