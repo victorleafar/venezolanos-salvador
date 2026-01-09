@@ -1000,3 +1000,26 @@ body {
 /* pequeñas mejoras para asegurar que los dropdowns no queden tapados */
 .dropdown .dropdown-content a { color: var(--text-dark); text-decoration: none; padding: 6px 8px; border-radius: 6px; }
 .dropdown .dropdown-content a:hover { background: rgba(0,0,0,0.03); }
+
+/* --- EVENTOS CAROUSEL --- */
+.eventos-carousel {
+  background: linear-gradient(135deg, var(--ven-blue) 0%, #1e3a5f 100%);
+}
+
+.eventos-carousel .section-title {
+  color: white;
+}
+
+.eventos-carousel .section-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.eventos-carousel .title-underline {
+  background: var(--ven-yellow);
+}
+
+@media (max-width: 768px) {
+  .carousel-arrow {
+    display: none !important;
+  }
+}

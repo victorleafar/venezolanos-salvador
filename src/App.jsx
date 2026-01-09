@@ -264,12 +264,12 @@ const EventosCarousel = () => {
   }, []);
 
   return (
-    <section className="section" style={{ background: 'linear-gradient(135deg, var(--ven-blue) 0%, #1e3a5f 100%)' }}>
+    <section className="section eventos-carousel">
       <div className="container">
         <div className="title-wrapper">
-          <h2 className="section-title" style={{ color: 'white' }}>Próximos Eventos</h2>
-          <div className="title-underline" style={{ background: 'var(--ven-yellow)' }}></div>
-          <p className="section-subtitle" style={{ color: 'rgba(255,255,255,0.9)' }}>
+          <h2 className="section-title">Próximos Eventos</h2>
+          <div className="title-underline"></div>
+          <p className="section-subtitle">
             Mantente atento a las actividades de nuestra comunidad
           </p>
         </div>
@@ -283,8 +283,7 @@ const EventosCarousel = () => {
               left: -50,
               top: '50%',
               transform: 'translateY(-50%)',
-              background: 'var(--ven-yellow)',
-              color: 'var(--ven-blue)',
+              background: 'rgba(255,255,255,0.9)',
               border: 'none',
               borderRadius: '50%',
               width: 40,
@@ -292,17 +291,16 @@ const EventosCarousel = () => {
               cursor: 'pointer',
               zIndex: 10,
               fontSize: 20,
-              fontWeight: 'bold',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
+              boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
             }}
           >
             ‹
           </button>
 
-          <div style={{ overflow: 'hidden', borderRadius: 16, boxShadow: '0 8px 32px rgba(0,0,0,0.4)' }}>
+          <div style={{ overflow: 'hidden', borderRadius: 16, boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
             <div
               style={{
                 display: 'flex',
@@ -348,15 +346,15 @@ const EventosCarousel = () => {
                     >
                       {evento.tipo}
                     </span>
-                    <h3 style={{ color: 'white', margin: '8px 0', fontSize: 28, fontWeight: 'bold' }}>
+                    <h3 style={{ color: 'white', margin: '8px 0', fontSize: 28 }}>
                       {evento.titulo}
                     </h3>
-                    <p style={{ color: 'white', margin: '4px 0' }}>
+                    <p style={{ color: 'rgba(255,255,255,0.9)', margin: '4px 0' }}>
                       {evento.descripcion}
                     </p>
                     <div style={{ display: 'flex', gap: 20, marginTop: 12, fontSize: 14 }}>
-                      <span style={{ color: 'var(--ven-yellow)', fontWeight: 'bold' }}>📅 {evento.fecha}</span>
-                      <span style={{ color: 'var(--ven-yellow)', fontWeight: 'bold' }}>📍 {evento.lugar}</span>
+                      <span style={{ color: 'var(--ven-yellow)' }}>📅 {evento.fecha}</span>
+                      <span style={{ color: 'var(--ven-yellow)' }}>📍 {evento.lugar}</span>
                     </div>
                   </div>
                 </div>
@@ -372,8 +370,7 @@ const EventosCarousel = () => {
               right: -50,
               top: '50%',
               transform: 'translateY(-50%)',
-              background: 'var(--ven-yellow)',
-              color: 'var(--ven-blue)',
+              background: 'rgba(255,255,255,0.9)',
               border: 'none',
               borderRadius: '50%',
               width: 40,
@@ -381,11 +378,10 @@ const EventosCarousel = () => {
               cursor: 'pointer',
               zIndex: 10,
               fontSize: 20,
-              fontWeight: 'bold',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
+              boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
             }}
           >
             ›
@@ -401,7 +397,7 @@ const EventosCarousel = () => {
                   height: 8,
                   borderRadius: 4,
                   border: 'none',
-                  background: currentIndex === idx ? 'var(--ven-yellow)' : 'rgba(255,255,255,0.5)',
+                  background: currentIndex === idx ? 'var(--ven-yellow)' : 'rgba(255,255,255,0.4)',
                   cursor: 'pointer',
                   transition: 'all 0.3s ease'
                 }}
@@ -412,7 +408,7 @@ const EventosCarousel = () => {
         </div>
 
         <div style={{ textAlign: 'center', marginTop: 32 }}>
-          <Link to="/eventos" className="btn btn-primary" style={{ background: 'var(--ven-yellow)', color: 'var(--ven-blue)', fontWeight: 'bold' }}>
+          <Link to="/eventos" className="btn btn-primary" style={{ background: 'white', color: 'var(--ven-blue)' }}>
             Ver Más Información
           </Link>
         </div>
