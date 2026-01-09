@@ -150,47 +150,7 @@ const InfoSection = () => {
     }
   };
 
-  return (
-    <section id="informacion" className="section bg-white">
-      <div className="container">
-        <div className="title-wrapper">
-          <h2 className="section-title">Lo que necesitas saber</h2>
-          <div className="title-underline"></div>
-          <p className="section-subtitle">No estás solo en esto. Aquí tienes la información esencial para empezar tu vida en Brasil con el pie derecho.</p>
-        </div>
-
-        {/* Contenedor principal del carrusel con botones */}
-        <div className="carousel-container-wrapper">
-          
-          {/* Botón Izquierda */}
-          <button className="carousel-arrow arrow-left" onClick={scrollLeft} aria-label="Anterior">
-            &#10094; {/* Símbolo de flecha izquierda */}
-          </button>
-
-          {/* El área visible del carrusel (Viewport) */}
-          <div className="carousel-viewport" ref={carouselRef}>
-            {/* La pista que contiene todas las tarjetas en fila */}
-            <div className="carousel-track">
-              {INFO_CARDS.map((card) => (
-                // Cambiamos la clase a 'carousel-card' para el nuevo estilo
-                <div key={card.id} className="card-info carousel-card">
-                  <div className="card-icon">{card.icon}</div>
-                  <h3>{card.title}</h3>
-                  <p>{card.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Botón Derecha */}
-          <button className="carousel-arrow arrow-right" onClick={scrollRight} aria-label="Siguiente">
-            &#10095; {/* Símbolo de flecha derecha */}
-          </button>
-        </div>
-
-      </div>
-    </section>
-  );
+  
 };
 const Carousel = () => {
   const [current, setCurrent] = useState(0);

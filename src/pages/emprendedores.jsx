@@ -3,66 +3,21 @@
 const servicios = [
   {
     id: 1,
-    nombre: 'Asesoría Contable',
-    descripcion: 'Servicios de contabilidad y gestión financiera para emprendedores.',
-    foto: 'https://via.placeholder.com/200', // Reemplaza con URL real
-    contacto: '+55 71 99999-9999',
-    ubicacion: 'Salvador - BA',
+    nombre: 'Victor Martinez',
+    descripcion: 'Servicios de desarrollo web.',
+    foto: 'https://scontent.fscl19-1.fna.fbcdn.net/v/t39.30808-6/498152336_24566000572989131_6192973097166490137_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGQrxmdLbWGmAhRyHputtgDZSwCzSvG8t9lLALNK8by33cJBbJetwAjd_pdY5BrVGCRpVvpvKpgY2mEwIqHFoyv&_nc_ohc=JnNNiqqI9ukQ7kNvwF2I2iW&_nc_oc=Adke4fuqRhTkexKokvt-5KrQkskp0_ZhfGT3L4JhtTI8scIDXszMUKRy6pkTeMaunB4&_nc_zt=23&_nc_ht=scontent.fscl19-1.fna&_nc_gid=3NBrZVbeFmvDtsVBhHTZ5Q&oh=00_AfqODaM9beIyPH9RYz9qmuWGGlwVR6rxkm57Ve7TKPCzPw&oe=69670D7D', // Reemplaza con URL real
+    contacto: '+55 71 983242706',
+    ubicacion: 'Salvador - BA y Actuación Remota',
   },
   {
     id: 2,
-    nombre: 'Marketing Digital',
-    descripcion: 'Estrategias de marketing online y redes sociales para pequeñas empresas.',
-    foto: 'https://via.placeholder.com/200',
-    contacto: '+55 71 98888-8888',
-    ubicacion: 'Salvador - BA',
+    nombre: 'Deliana Maria Mast Rodríguez',
+    descripcion: 'Graduada en Tecnologías de Alimentos y cantante.',
+    foto: 'https://st2.depositphotos.com/2703645/7676/v/950/depositphotos_76762419-stock-illustration-avatar-icon-singer-woman.jpg',
+    contacto: '+55 75 992175370, delianamast@gmail.com',
+    ubicacion: 'Seabra, Centro. Rua Manoel Teixeira Leite ',
   },
   {
-    id: 3,
-    nombre: 'Desarrollo Web',
-    descripcion: 'Creación de páginas web y tiendas online personalizadas.',
-    foto: 'https://via.placeholder.com/200',
-    contacto: '+55 71 97777-7777',
-    ubicacion: 'Salvador - BA',
-  },
-  {
-    id: 4,
-    nombre: 'Consultoría Legal',
-    descripcion: 'Asesoría jurídica para emprendedores y registro de empresas.',
-    foto: 'https://via.placeholder.com/200',
-    contacto: '+55 71 96666-6666',
-    ubicacion: 'Salvador - BA',
-  },
-  {
-    id: 5,
-    nombre: 'Consultoría Legal',
-    descripcion: 'Asesoría jurídica para emprendedores y registro de empresas.',
-    foto: 'https://via.placeholder.com/200',
-    contacto: '+55 71 96666-6666',
-    ubicacion: 'Salvador - BA',
-  },
-  {
-    id: 6,
-    nombre: 'Consultoría Legal',
-    descripcion: 'Asesoría jurídica para emprendedores y registro de empresas.',
-    foto: 'https://via.placeholder.com/200',
-    contacto: '+55 71 96666-6666',
-    ubicacion: 'Salvador - BA',
-  },
-  {
-    id: 7,
-    nombre: 'Consultoría Legal',
-    descripcion: 'Asesoría jurídica para emprendedores y registro de empresas.',
-    foto: 'https://via.placeholder.com/200',
-    contacto: '+55 71 96666-6666',
-    ubicacion: 'Salvador - BA',
-  },
-  {
-    id: 8,
-    nombre: 'Consultoría Legal',
-    descripcion: 'Asesoría jurídica para emprendedores y registro de empresas.',
-    foto: 'https://via.placeholder.com/200',
-    contacto: '+55 71 96666-6666',
     ubicacion: 'Salvador - BA',
   },
 ];
@@ -99,11 +54,13 @@ export default function Emprendedores() {
                 boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
               }}
             >
-              <img
-                src={servicio.foto}
-                alt={servicio.nombre}
-                style={{ width: '100%', height: '150px', objectFit: 'cover', borderRadius: '8px' }}
-              />
+              <div style={{ width: '200px', height: '200px', margin: '0 auto', background: '#fff', borderRadius: '50%', padding: 0, overflow: 'hidden' }}>
+                <img
+                  src={servicio.foto}
+                  alt={servicio.nombre}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+              </div>
               <h3 style={{ margin: '10px 0' }}>{servicio.nombre}</h3>
               <p style={{ fontSize: '0.9rem', marginBottom: '10px' }}>{servicio.descripcion}</p>
               <p style={{ fontSize: '0.85rem', marginBottom: '5px' }}>
