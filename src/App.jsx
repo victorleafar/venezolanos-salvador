@@ -64,7 +64,6 @@ function Header() {
               <Link to="/cpf">CPF</Link>
               <Link to="/residencia">Residencia / Refugio</Link>
               <Link to="/documento-migratorio">Documento Migratorio (RNM.)</Link>
-              <Link to="/carteira">Carteira de Trabalho</Link>
               <Link to="/naturalizacion">Naturalización</Link>
               <Link to="/pasaporte">Pasaporte Venezolano</Link>
               <Link to="/traduccion">Traducción de Documentos</Link>
