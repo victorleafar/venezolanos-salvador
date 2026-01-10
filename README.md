@@ -8,10 +8,7 @@ https://venezolanos-salvador-ollx.vercel.app/
 
 ## Sobre o projeto
 
-Este projeto tem como objetivo reunir informações úteis para venezuelanos que vivem ou pretendem viver em Salvador.  
-A plataforma aborda temas básicos do dia a dia, como documentação, educação, trabalho, saúde e comunidade.
-
-O foco é facilitar o acesso à informação de forma simples e organizada.
+Este projeto tem como objetivo reunir informações úteis para venezuelanos que vivem ou pretendem viver em Salvador.   A plataforma aborda temas básicos do dia a dia, como documentação, educação, trabalho, saúde e comunidade. O foco é facilitar o acesso à informação de forma simples e organizada.
 
 ## Conteúdo
 
